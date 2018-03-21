@@ -14,26 +14,26 @@ import (
 
 func main(){
 
-    y := yima.Yima{Token: "<YOUR TOKEN>"}
+	y := yima.Yima{Token: "<YOUR TOKEN>"}
 
-    candidates, err := y.SearchTemplate("<KEYWORD>")
-    if err != nil {
-        panic(err)
-    }
+	candidates, err := y.SearchTemplate("<KEYWORD>")
+	if err != nil {
+		panic(err)
+	}
     
-    // 使用第一个
-    itemID := candidates[0].ID
+	// 使用第一个
+	itemID := candidates[0].ID
     
-    // 获取一个中国移动的号码
-    phone, err := y.GetNumber(itemID, &yima.MobileOption{
-        ISP: yima.ChinaMobile,
-    })
+	// 获取一个中国移动的号码
+	phone, err := y.GetNumber(itemID, &yima.MobileOption{
+		ISP: yima.ChinaMobile,
+	})
     
-    if err != nil {
-        panic(err)
-    }
+	if err != nil {
+		panic(err)
+	}
     
-    fmt.Println("Get the phone: %v", phone)
+	fmt.Println("Get the phone: %v", phone)
     
 }
 ```
