@@ -9,7 +9,7 @@ package main
 
 import (
 	"github.com/wolther47/yima"
-    "fmt"
+	"fmt"
 )
 
 func main(){
