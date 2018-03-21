@@ -27,7 +27,7 @@ const (
 	YimaScheme = "http"
 	YimaPath   = "UserInterface.aspx"
 
-	YimaCandidateHost   = "api.51ym.me"
+	YimaCandidateHost   = "api.fxhyd.cn"
 	YimaCandidateScheme = "http"
 	YimaCandidatePath   = "appapi.aspx"
 )
@@ -261,9 +261,6 @@ func (ym *Yima) get(action string, params map[string]string) (string, error) {
 	query.Add("action", action)
 
 	url.RawQuery = query.Encode()
-
-	// FIXME: Remove this
-	fmt.Println(url.String())
 
 	resp, err := http.Get(url.String())
 	if err != nil {
